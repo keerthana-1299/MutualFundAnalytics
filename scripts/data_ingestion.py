@@ -1,0 +1,31 @@
+import pandas as pd
+import os
+
+# Folder containing CSV files
+data_path = "data/raw"
+
+# Get all CSV files
+csv_files = [f for f in os.listdir(data_path) if f.endswith(".csv")]
+
+print(f"\nFound {len(csv_files)} CSV files")
+
+for file in csv_files:
+
+    print("\n" + "=" * 60)
+    print(f"Dataset: {file}")
+
+    file_path = os.path.join(data_path, file)
+
+    df = pd.read_csv(file_path)
+
+    print("\nShape:")
+    print(df.shape)
+
+    print("\nData Types:")
+    print(df.dtypes)
+
+    print("\nFirst 5 Rows:")
+    print(df.head())
+
+    print("\nMissing Values:")
+    print(df.isnull().sum())
