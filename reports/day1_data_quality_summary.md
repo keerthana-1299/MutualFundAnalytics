@@ -1,33 +1,35 @@
 # Day 1 Data Quality Summary
 
 ## Datasets Loaded
-Successfully loaded 6 mutual fund NAV datasets fetched from mfapi.in.
 
-Datasets:
-- HDFC_Top_100_Direct.csv
-- SBI_Bluechip.csv
-- ICICI_Bluechip.csv
-- Nippon_Large_Cap.csv
-- Axis_Bluechip.csv
-- Kotak_Bluechip.csv
+Successfully loaded all 10 provided datasets and 6 live NAV datasets.
+
+## Fund Master Analysis
+
+- Total Fund Houses: 10
+- Categories: Equity, Debt
+- Total Sub Categories: 12
+- Risk Categories:
+  - Low
+  - Moderate
+  - High
+  - Very High
+  - Moderately High
+
+## Data Quality Checks
+
+- All datasets loaded successfully.
+- No duplicate rows found during initial inspection.
+- Missing values were checked.
+- Date columns need conversion to datetime format during preprocessing.
+
+## AMFI Validation
+
+- Missing Codes Count: 0
+- All AMFI codes exist in nav_history dataset.
 
 ## Observations
 
-1. All datasets were loaded successfully using Pandas.
-2. No missing values were found in the datasets.
-3. Each dataset contains two columns:
-   - date (object datatype)
-   - nav (float64 datatype)
-4. Date column is currently stored as object and should be converted to datetime during preprocessing.
-5. No duplicate records observed during initial inspection.
-
-## Anomalies Identified
-
-- Date column datatype needs conversion to datetime format.
-- Additional datasets such as fund_master and nav_history are awaited for further validation.
-
-## Pending Tasks
-
-- Explore fund master dataset.
-- Validate AMFI scheme codes.
-- Perform detailed data quality assessment once complete datasets are available.
+- Dataset quality is good.
+- No major anomalies identified.
+- Data is ready for cleaning and transformation in Day 2.
